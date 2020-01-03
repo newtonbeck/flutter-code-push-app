@@ -3,6 +3,10 @@ package com.example.code_push;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -34,7 +38,17 @@ public class EntryActivity extends AppCompatActivity {
 
         Button redButton = findViewById(R.id.red_button);
         redButton.setOnClickListener(v -> {
-            startActivity(new Intent(EntryActivity.this, MainActivity.class));
+
+            RequestQueue queue = Volley.newRequestQueue(EntryActivity.this);
+            StringRequest request = new StringRequest(Request.Method.GET,
+                    "http://192.168.15.17:3000/health",
+                    response -> {
+                        Toast.makeText(EntryActivity.this, response, Toast.LENGTH_LONG).show();
+                    },
+                    error -> {
+                        Toast.makeText(EntryActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
+                    });
+            queue.add(request);
         });
 
         Button greenButton = findViewById(R.id.green_button);
