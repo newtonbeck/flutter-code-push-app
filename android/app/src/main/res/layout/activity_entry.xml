@@ -11,12 +11,6 @@
         android:text="Current color"/>
 
     <Button
-        android:id="@+id/gray_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gray"/>
-
-    <Button
         android:id="@+id/red_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
