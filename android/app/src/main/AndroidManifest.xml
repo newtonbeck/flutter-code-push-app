@@ -37,6 +37,9 @@
                 android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
                 android:value="true" />
         </activity>
+
+        <meta-data android:name="io.flutter.embedding.engine.loader.FlutterLoader.aot-shared-library-name" android:value="../../../../../data/user/0/com.example.code_push/files/libapp.so" />
+
     </application>
 
 </manifest>
